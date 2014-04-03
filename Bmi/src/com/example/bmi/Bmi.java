@@ -1,7 +1,11 @@
 package com.example.bmi;
 
+import java.text.DecimalFormat;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
@@ -14,7 +18,7 @@ public class Bmi extends Activity {
 	
 	private EditText edithei,editwei;
 	private Button bcal;	
-	private TextView result;
+	private TextView result,result2;
 	
 
     @Override
@@ -32,13 +36,24 @@ public class Bmi extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
+			DecimalFormat nf=new DecimalFormat("0.0");
 			double height=Double.parseDouble(edithei.getText().toString());//轉成數字
 			double weight=Double.parseDouble(editwei.getText().toString());
 			double resultc=weight/Math.pow(height, 2);
 			result.setText(new Double(resultc).toString());//轉成string
+			result2.setText("您的bmi : "+nf.format(resultc));
+			
+			openOptionDialog();
 		}
+		
 	};
     	
+	public void openOptionDialog(){
+		AlertDialog.Builder dialog=new AlertDialog.Builder(Bmi.this);
+		dialog.setTitle("關於此bmi計算程式");
+		dialog.setMessage("能算出您的bmi，很酷八!! 給個讚");
+		dialog.show();
+	}
     
     private void getview() {
 		// TODO Auto-generated method stub
@@ -46,6 +61,7 @@ public class Bmi extends Activity {
 		editwei=(EditText) findViewById(R.id.wIn);
 		bcal=(Button) findViewById(R.id.bCal);
 		result=(TextView) findViewById(R.id.result);
+		result2= (TextView) findViewById(R.id.result2);
 	}
 
 
