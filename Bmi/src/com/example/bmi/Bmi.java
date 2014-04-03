@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
@@ -58,6 +59,14 @@ public class Bmi extends Activity {
 		new AlertDialog.Builder(Bmi.this)
 		.setTitle("關於此bmi計算程式")
 		.setMessage("能算出您的bmi，很酷八!! 給個讚")
+		.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				
+			}
+		})
 		.show();
 	}
     
