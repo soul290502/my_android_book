@@ -71,8 +71,11 @@ public class Bmi extends Activity {
 //		.show();
 		
 		//use toast to show string temporally 
-		Toast popup=Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT);
-		popup.show();
+//		Toast popup=Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT);
+		//this announce need a memory space
+//		popup.show();
+		Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT).show();//anonymous announcement 
+		
 		}
     
     private void getview() {
