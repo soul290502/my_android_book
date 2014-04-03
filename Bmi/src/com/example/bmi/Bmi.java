@@ -49,10 +49,16 @@ public class Bmi extends Activity {
 	};
     	
 	public void openOptionDialog(){
-		AlertDialog.Builder dialog=new AlertDialog.Builder(Bmi.this);
-		dialog.setTitle("關於此bmi計算程式");
-		dialog.setMessage("能算出您的bmi，很酷八!! 給個讚");
-		dialog.show();
+//		AlertDialog.Builder dialog=new AlertDialog.Builder(Bmi.this);//會佔記憶體的宣告方式
+//		dialog.setTitle("關於此bmi計算程式");
+//		dialog.setMessage("能算出您的bmi，很酷八!! 給個讚");
+//		dialog.show();
+		
+		//匿名方式，做完會收回記憶體
+		new AlertDialog.Builder(Bmi.this)
+		.setTitle("關於此bmi計算程式")
+		.setMessage("能算出您的bmi，很酷八!! 給個讚")
+		.show();
 	}
     
     private void getview() {
