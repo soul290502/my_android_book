@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Bmi extends Activity {
 	
@@ -55,20 +56,24 @@ public class Bmi extends Activity {
 //		dialog.setMessage("能算出您的bmi，很酷八!! 給個讚");
 //		dialog.show();
 		
-		//匿名方式，做完會收回記憶體
-		new AlertDialog.Builder(Bmi.this)
-		.setTitle("關於此bmi計算程式")
-		.setMessage("能算出您的bmi，很酷八!! 給個讚")
-		.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				
-			}
-		})
-		.show();
-	}
+//		//匿名方式，做完會收回記憶體
+//		new AlertDialog.Builder(Bmi.this)
+//		.setTitle("關於此bmi計算程式")
+//		.setMessage("能算出您的bmi，很酷八!! 給個讚")
+//		.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+//			
+//			@Override
+//			public void onClick(DialogInterface dialog, int which) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//		})
+//		.show();
+		
+		//use toast to show string temporally 
+		Toast popup=Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT);
+		popup.show();
+		}
     
     private void getview() {
 		// TODO Auto-generated method stub
