@@ -7,5 +7,6 @@
     <string name="bmi_height" >身高(m)</string>
     <string name="bmi_weight">體重(kg)</string>
     <string name="bcal">計算bmi</string>
+    <string name="home_label">首頁</string>
 
 </resources>

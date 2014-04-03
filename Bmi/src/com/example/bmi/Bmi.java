@@ -2,11 +2,13 @@ package com.example.bmi;
 
 import java.text.DecimalFormat;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.text.Editable;
 import android.view.Menu;
 import android.view.View;
@@ -56,25 +58,35 @@ public class Bmi extends Activity {
 //		dialog.setMessage("能算出您的bmi，很酷八!! 給個讚");
 //		dialog.show();
 		
-//		//匿名方式，做完會收回記憶體
-//		new AlertDialog.Builder(Bmi.this)
-//		.setTitle("關於此bmi計算程式")
-//		.setMessage("能算出您的bmi，很酷八!! 給個讚")
-//		.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-//			
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//		})
-//		.show();
+		//匿名方式，做完會收回記憶體
+		new AlertDialog.Builder(Bmi.this)
+		.setTitle("關於此bmi計算程式")
+		.setMessage("能算出您的bmi，很酷八!! 給個讚")
+		.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				
+			}
+		})
+		.setNegativeButton(R.string.home_label, new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// go to url
+				Uri uri = Uri.parse("http://google.com.tw/");
+				Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+				startActivity(intent);
+			}
+		})
+		.show();
 		
 		//use toast to show string temporally 
 //		Toast popup=Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT);
 		//this announce need a memory space
 //		popup.show();
-		Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT).show();//anonymous announcement 
+//		Toast.makeText(Bmi.this, "Bmi 計算機", Toast.LENGTH_SHORT).show();//anonymous announcement 
 		
 		}
     
